@@ -1,0 +1,2 @@
+D:\projects\Earth\Earth.Template\obj\Debug\Earth.Template.csprojAssemblyReference.cache
+D:\projects\Earth\Earth.Template\obj\Debug\Earth.Template.csproj.CoreCompileInputs.cache

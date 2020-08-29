@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ManagementSite.Master.cs" Inherits="management_ManagementSite" %>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Earth - Management</title>
+    <script src="/js/jquery-3.5.1.js"></script>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
+    <style>
+        .manager{margin-right:10px}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" onsubmit="return validate()">
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/" target="_blank" style="font-size:20px">ABC Training Institute</a>
+
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" id="manager" runat="server" href="javascript:logoff()">Log off</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>operation</span>
+                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                            
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="LocationList.aspx">
+                                <span data-feather="layers"></span>
+                                Location
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserList.aspx">
+                                <span data-feather="layers"></span>
+                                User
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>System</span>
+                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                            
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="ManagerList.aspx">
+                                <span data-feather="users"></span>
+                                Manager
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ChangePassword.aspx">
+                                <span data-feather="file-text"></span>
+                                Change Password
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+
+    <script>
+    function logoff()
+    {
+	    $.ajax({
+		    type: "POST",
+		    async: false,
+		    url: "Ajax/Logoff.ashx",
+		    cache: false,
+		    processData: false,
+            contentType: false,
+            dataType: "json", //针对返回数据
+		    success: function (response)
+		    {
+                    location.href = "Default.aspx";
+		    },
+		    error: function (XMLHttpRequest, textStatus, thrownError)
+		    {
+			    alert(thrownError);
+		    }
+	    });
+        return false;
+    }
+    </script>
+</body>
+</html>
+

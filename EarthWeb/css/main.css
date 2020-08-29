@@ -1,0 +1,68 @@
+﻿body {
+    font-size: 16px;
+    font-family: 微软雅黑;
+    margin: 1px 3px 1px 3px
+}
+
+.title {
+    font-size: 24px;
+    background-color: #e3e6f8;
+    padding: 4px;
+    border-radius: 5px
+}
+a {
+    color: black;
+    text-decoration: none
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline
+}
+
+#gege {
+    width: 100%;
+    background-color: #dddddd;
+    border: 0px;
+    border-spacing: 1px
+}
+
+#gege td {
+    background-color: white;
+    padding: 3px
+}
+
+#gege tr:nth-of-type(1) td {
+    background-color: #e3e6f8;
+    font-weight:bold;
+    border-bottom:1px solid #808080
+}
+
+.searchFrame {padding:5px;background-color:lightyellow; margin-bottom:5px}
+
+select {font-size:14px}
+
+.gegeFooter {background-color:#f2fba0; margin-bottom:10px; margin-top:7px; padding:3px; border-top:solid 1px orange}
+
+.button {
+    background-color: #4671ff; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px
+}
+.buttonSearch {
+    background-color: #4671ff; /* Green */
+    border: none;
+    color: white;
+    padding: 0px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px
+}
